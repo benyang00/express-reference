@@ -35,13 +35,13 @@ describe("Express Server API", function() {
 describe("Express Server Front end", function() {
   describe("GET /", function() {
     it("returns status code 200", function(done) {
-      // request.get(base_url,
-      //   function(err, response, body) {
-      //     expect(response.statusCode).toBe(200);
-      //     expect(body).toBe("Hello world with MVC Structure");
-      //     done();
-      //   }
-      // );
+      request.get(base_url,
+        function(err, response, body) {
+          expect(response.statusCode).toBe(200);
+          expect(body).toBe("Hello world with MVC Structure");
+          done();
+        }
+      );
 
       supertest(app)
       .get('/')
