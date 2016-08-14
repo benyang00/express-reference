@@ -5,12 +5,6 @@ var base_url = "http://localhost:7000/"
 var about_url = base_url + 'about';
 var contact_url = base_url + 'contact';
 
-// function check200(err, response, body) {
-//   expect(response.statusCode).toBe(200);
-//   done();
-// }
-
-
 describe("Express Server API", function() {
   describe("should return users json on get /users", function() {
       it("returns status code 200", function(done) {
