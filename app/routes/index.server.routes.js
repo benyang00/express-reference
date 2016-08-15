@@ -4,16 +4,12 @@ module.exports = function(app) {
   // var about = require('../controllers/about.server.controller');
   // var contact = require('../controllers/contact.server.controller');
 
+  // COMBINE ALL CONTROLLERS INTO ONE
   var staticPageController = require('../controllers/staticpage.server.controller');
-
-  var usersController = require('../controllers/users.server.controller');
 
   // ACTUAL ROUTING
   // static page routes
   app.get('/', staticPageController.renderHome);
   app.get('/about', staticPageController.renderAbout);
   app.get('/contact', staticPageController.renderContact);
-
-  // restful routes
-  app.get('/users', usersController.index);
  };
