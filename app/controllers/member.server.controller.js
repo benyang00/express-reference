@@ -4,7 +4,6 @@ module.exports = {
   index: function(req, res, next) {
     Member.find({}, function(err, members) {
       if (err) return next(err);
-      res.status(404);
       res.json(members);
     });
   },

@@ -12,4 +12,10 @@ module.exports = function(app) {
   app.get('/', staticPageController.renderHome);
   app.get('/about', staticPageController.renderAbout);
   app.get('/contact', staticPageController.renderContact);
+
+  app.get('/error', function(req, res) {
+    res.status(404)
+       .sendFile(__dirname + '/public/404.html');
+  });
+
  };

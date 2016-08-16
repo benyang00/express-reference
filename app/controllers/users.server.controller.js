@@ -28,7 +28,7 @@ module.exports = {
   },
   create: function(req, res, next) {
     var user = new User(req.body);
-    
+
     user.save(function(err) {
       if (err) return next(err);
 
@@ -59,6 +59,16 @@ module.exports = {
         _id: id
       }, 'firstName lastName',
       function(err, user) {
+        if (err) {
+          return next(err);
+        } else {
+          req.user = user;
+          next();
+        }
+      });
+  },
+  user_by_username: function(req, res, next, username) {
+    User.findOneByUsername(username, function(err, user) {
         if (err) {
           return next(err);
         } else {

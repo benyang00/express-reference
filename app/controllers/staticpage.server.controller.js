@@ -19,5 +19,9 @@ module.exports = {
     res.render('static_pages/contact', {
       title: 'Contact WDI'
     });
+  },
+  renderOhfour: function(req, res) {
+    res.status(404)
+       .sendFile(__dirname + '/public/404.html');
   }
 }

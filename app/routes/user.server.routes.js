@@ -14,5 +14,8 @@ module.exports = function(app) {
       .put(usersController.update)
       .delete(usersController.delete);
 
+  app.get('/users/username/:username', usersController.show);
+
   app.param('user_id', usersController.user_by_id);
+  app.param('username', usersController.user_by_username);
  };
